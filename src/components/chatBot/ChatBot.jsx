@@ -7,7 +7,7 @@ import CachedIcon from "@mui/icons-material/Cached";
 import Tooltip from "@mui/material/Tooltip";
 import "./ChatBot.css";
 
-const API_KEY = "AIzaSyDe_TrUGvvBCRZAK58QgnZH80ZUrn0pUq0";
+const API_KEY = "Your_API_Key";
 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState("");
