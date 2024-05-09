@@ -181,6 +181,10 @@ header h2 {
   font-size: 2rem;
 }
 
+.loading-spinner {
+  padding: 0px 0px 0px 8px;
+}
+
 @media (max-width: 880px) {
   .chatbot {
     right: 16px;
@@ -198,10 +202,10 @@ header h2 {
   .chatbot header span {
     display: block;
   }
-  .chatbox .chat p{
+  .chatbox .chat p {
     font-size: 0.785rem;
   }
-  .chat-input textarea{
+  .chat-input textarea {
     font-size: 0.85rem;
   }
   .toggle-icon {

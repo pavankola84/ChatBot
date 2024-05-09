@@ -5,9 +5,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
 import CachedIcon from "@mui/icons-material/Cached";
 import Tooltip from "@mui/material/Tooltip";
+import LoadingSpinner from "../common/LoadingSpinner";
 import "./ChatBot.css";
 
-const API_KEY = "Your_API_Key";
+const API_KEY = "AIzaSyDe_TrUGvvBCRZAK58QgnZH80ZUrn0pUq0";
 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState("");
@@ -35,7 +36,7 @@ const Chatbot = () => {
     setChatMessages((prevMessages) => [
       ...prevMessages,
       { content: userMessage, className: "outgoing" },
-      { content: "...", className: "incoming" },
+      { loading: true, className: "incoming" }, // Add loading indicator
     ]);
     setUserMessage("");
 
@@ -91,7 +92,15 @@ const Chatbot = () => {
                     <SmartToyIcon style={{ marginTop: "4px" }} />
                   </span>
                 )}
-                <p>{message.content}</p>
+                
+                {message.loading && (
+                  <span className="loading-spinner">
+                    <LoadingSpinner/>
+                  </span>
+                )}
+                {message.content && (
+                  <p>{message.content}</p>
+                )}
               </li>
             ))}
           </ul>
