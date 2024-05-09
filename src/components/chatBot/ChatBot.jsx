@@ -4,6 +4,7 @@ import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
 import CachedIcon from "@mui/icons-material/Cached";
+import Tooltip from "@mui/material/Tooltip";
 import "./ChatBot.css";
 
 const API_KEY = "Your_API_Key";
@@ -25,11 +26,9 @@ const Chatbot = () => {
   };
 
   const refreshChat = () => {
-    setChatMessages([
-      chatMessages[0]
-    ]);
+    setChatMessages([chatMessages[0]]);
   };
-  
+
   const handleSendChat = () => {
     if (!userMessage.trim()) return;
 
@@ -97,9 +96,11 @@ const Chatbot = () => {
             ))}
           </ul>
           <div className="chat-input">
-            <div id="Refresh-btn" onClick={refreshChat}>
-              <CachedIcon />
-            </div>
+            <Tooltip title="Refresh Chat" arrow>
+              <div id="Refresh-btn" onClick={refreshChat}>
+                <CachedIcon />
+              </div>
+            </Tooltip>
             <textarea
               value={userMessage}
               onChange={handleInputChange}
@@ -121,7 +122,15 @@ const Chatbot = () => {
         </div>
       )}
       <div className="toggle-icon" onClick={toggleChatbot}>
-        {showChatbot ? <CloseIcon /> : <SmartToyIcon />}
+        {showChatbot ? (
+          <Tooltip title="Close ChatBot" arrow>
+            <CloseIcon />
+          </Tooltip>
+        ) : (
+          <Tooltip title="Open ChatBot" arrow>
+            <SmartToyIcon />
+          </Tooltip>
+        )}
       </div>
     </>
   );
