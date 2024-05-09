@@ -7,7 +7,7 @@ import CachedIcon from "@mui/icons-material/Cached";
 import Tooltip from "@mui/material/Tooltip";
 import "./ChatBot.css";
 
-const API_KEY = "Your_API_Key";
+const API_KEY = "AIzaSyDe_TrUGvvBCRZAK58QgnZH80ZUrn0pUq0";
 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState("");
@@ -96,11 +96,11 @@ const Chatbot = () => {
             ))}
           </ul>
           <div className="chat-input">
-            <Tooltip title="Refresh Chat" arrow>
-              <div id="Refresh-btn" onClick={refreshChat}>
+            <div id="Refresh-btn" onClick={refreshChat}>
+              <Tooltip title="Refresh Chat" arrow enterDelay={500}>
                 <CachedIcon />
-              </div>
-            </Tooltip>
+              </Tooltip>
+            </div>
             <textarea
               value={userMessage}
               onChange={handleInputChange}
@@ -123,11 +123,11 @@ const Chatbot = () => {
       )}
       <div className="toggle-icon" onClick={toggleChatbot}>
         {showChatbot ? (
-          <Tooltip title="Close ChatBot" arrow>
+          <Tooltip title="Close ChatBot" arrow enterDelay={500}>
             <CloseIcon />
           </Tooltip>
         ) : (
-          <Tooltip title="Open ChatBot" arrow>
+          <Tooltip title="Open ChatBot" arrow enterDelay={500}>
             <SmartToyIcon />
           </Tooltip>
         )}
