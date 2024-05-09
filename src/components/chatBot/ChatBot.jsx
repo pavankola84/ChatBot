@@ -36,7 +36,7 @@ const Chatbot = () => {
     setChatMessages((prevMessages) => [
       ...prevMessages,
       { content: userMessage, className: "outgoing" },
-      { loading: true, className: "incoming" }, // Add loading indicator
+      { loading: true, className: "incoming" },
     ]);
     setUserMessage("");
 
